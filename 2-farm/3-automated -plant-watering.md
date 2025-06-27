@@ -32,7 +32,7 @@ IoT devices use a low voltage. While this is enough for sensors and low-power ac
 
 The solution to this is to have a pump connected to an external power supply, and use an actuator to switch on the pump, similar to how you would switch on a light. It takes a tiny amount of power (in the form of energy in your body) for your finger to flip a switch, and this connects the light to mains electricity running at 110v/240v.
 
-![A light switch turns power on to a light](../../../images/light-switch.png)
+![A light switch turns power on to a light](../images/light-switch.png)
 
 > 🎓 [Mains electricity](https://wikipedia.org/wiki/Mains_electricity) refers to the electricity delivered to homes and businesses through national infrastructure in many parts of the world.
 
@@ -46,17 +46,17 @@ A relay is an electromechanical switch that converts an electrical signal into a
 
 > 🎓 [Electromagnets](https://wikipedia.org/wiki/Electromagnet) are magnets that are created by passing electricity through a coil of wire. When the electricity is turned on, the coil becomes magnetized. When the electricity is turned off, the coil loses it magnetism.
 
-![When on, the electromagnet creates a magnetic field, turning on the switch for the output circuit](../../../images/relay-on.png)
+![When on, the electromagnet creates a magnetic field, turning on the switch for the output circuit](../images/relay-on.png)
 
 In a relay, a control circuit powers the electromagnet. When the electromagnet is on, it pulls a lever that moves a switch, closing a pair of contacts and completing an output circuit.
 
-![When off, the electromagnet doesn't create a magnetic field, turning off the switch for the output circuit](../../../images/relay-off.png)
+![When off, the electromagnet doesn't create a magnetic field, turning off the switch for the output circuit](../images/relay-off.png)
 
 When the control circuit is off, the electromagnet turns off, releasing the lever and opening the contacts, turning off the output circuit. Relays are digital actuators - a high signal to the relay turns it on, a low signal turns it off.
 
 The output circuit can be used to power additional hardware, like an irrigation system. The IoT device can turn the relay on, completing the output circuit that powers the irrigation system, and plants get watered. The IoT device can then turn the relay off, cutting the power to the irrigation system, turning the water off.
 
-![A relay turning on, turning on a pump sending water to a plant](../../../images/strawberry-pump.gif)
+![A relay turning on, turning on a pump sending water to a plant](../images/strawberry-pump.gif)
 
 In the video above, a relay is turned on. An LED on the relay lights up to indicate it is on (some relay boards have LEDs to indicate if the relay is on or off), and power is sent to the pump, turning it on and pumping water into a plant.
 
@@ -72,11 +72,11 @@ When the lever moves, you can usually hear it make contact with the electromagne
 
 The electromagnet doesn't need a lot of power to activate and pull the lever, it can be controlled using the 3.3V or 5V output from an IoT dev kit. The output circuit can carry a lot more power, depending on the relay, including mains voltage or even higher power levels for industrial use. This way an IoT Dev kit can control an irrigation system, from a small pump for a single plant, up to a massive industrial system for an entire commercial farm.
 
-![A grove relay with the control circuit, output circuit and relay labelled](../../../images/grove-relay-labelled.png)
+![A grove relay with the control circuit, output circuit and relay labelled](../images/grove-relay-labelled.png)
 
 The image above shows a Grove relay. The control circuit connects to an IoT device and turns the relay on or off using 3.3V or 5V. The output circuit has two terminals, either one can be power or ground. The output circuit can handle up to 250V at 10A, enough for a range of mains-powered devices. You can get relays that can handle even high power levels.
 
-![A pump wired through a relay](../../../images/pump-wired-to-relay.png)
+![A pump wired through a relay](../images/pump-wired-to-relay.png)
 
 In the image above, power is supplied to a pump via a relay. There is a red wire connecting the +5V terminal of a USB power supply to one terminal of the output circuit of the relay, and another red wire connecting the other terminal of the output circuit to the pump. A black wire connects the pump to the ground on the USB power supply. When the relay turns on, it completes the circuit, sending 5V to the pump, turning the pump on.
 
@@ -128,7 +128,7 @@ If you did the last lesson on soil moisture using a physical sensor, you would h
 
 > 💁 If you watered too close to the sensor you may have seen the reading drop quickly, then come back up - this is caused by water near the sensor spreading throughout the rest of the soil, reducing the soil moisture by the sensor.
 
-![A soil moisture measurement of 658 doesn't change during watering, it only drops to 320 after watering when water has soaked through the soil](../../../images/soil-moisture-travel.png)
+![A soil moisture measurement of 658 doesn't change during watering, it only drops to 320 after watering when water has soaked through the soil](../images/soil-moisture-travel.png)
 
 In the diagram above, a soil moisture reading shows 658. The plant is watered, but this reading doesn't change immediately, as the water has yet to reach the sensor. Watering can even finish before the water reaches the sensor and the value drops to reflect the new moisture level.
 
@@ -150,11 +150,11 @@ How long should the relay be on each time? It's better to err on the side of cau
 
 > 💁 This kind of timing control is very specific to the IoT device you are building, the property you are measuring and the sensors and actuators used.
 
-![A strawberry plant connected to water via a pump, with the pump connected to a relay. The relay and a soil moisture sensor in the plant are both connected to a Raspberry Pi](../../../images/strawberry-with-pump.png)
+![A strawberry plant connected to water via a pump, with the pump connected to a relay. The relay and a soil moisture sensor in the plant are both connected to a Raspberry Pi](../images/strawberry-with-pump.png)
 
 For example, I have a strawberry plant with a soil moisture sensor and a pump controlled by a relay. I've observed that when I add water it takes about 20 seconds for the soil moisture reading to stabilize. This means I need to turn the relay off and wait 20 seconds before checking the moisture levels. I'd rather have too little water than too much - I can always turn the pump on again, but I can't take water out of the plant.
 
-![Step 1, take measurement. Step 2, add water. Step 3, wait for water to soak through the soil. Step 4, retake measurement](../../../images/soil-moisture-delay.png)
+![Step 1, take measurement. Step 2, add water. Step 3, wait for water to soak through the soil. Step 4, retake measurement](../images/soil-moisture-delay.png)
 
 This means the best process would be a watering cycle that is something like:
 

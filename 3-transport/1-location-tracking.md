@@ -63,13 +63,13 @@ The Earth is a sphere - a three-dimensional circle. Because of this, points are 
 
 > 💁 No-one really knows the original reason why circles are divided into 360 degrees. The [degree (angle) page on Wikipedia](https://wikipedia.org/wiki/Degree_(angle)) covers some of the possible reasons.
 
-![Lines of latitude from 90° at the North Pole, 45° halfway between the North Pole and the equator, 0° at the equator, -45° halfway between the equator and the South Pole, and -90° at the South Pole](../../../images/latitude-lines.png)
+![Lines of latitude from 90° at the North Pole, 45° halfway between the North Pole and the equator, 0° at the equator, -45° halfway between the equator and the South Pole, and -90° at the South Pole](../images/latitude-lines.png)
 
 Latitude is measured using lines that circle the Earth and run parallel to the equator, dividing the Northern and Southern Hemispheres into 90° each. The equator is at 0°, the North Pole is 90°, also known as 90° North, and the South Pole is at -90°, or 90° South.
 
 Longitude is measured as the number of degrees measured east and west. The 0° origin of longitude is called the *Prime Meridian*, and was defined in 1884 to be a line from the North to the South Pole that goes through the [British Royal Observatory in Greenwich, England](https://wikipedia.org/wiki/Royal_Observatory,_Greenwich).
 
-![Lines of longitude that go from -180° to the west of the Prime Meridian, to 0° on the Prime Meridian, to 180° east of the Prime Meridian](../../../images/longitude-meridians.png)
+![Lines of longitude that go from -180° to the west of the Prime Meridian, to 0° on the Prime Meridian, to 180° east of the Prime Meridian](../images/longitude-meridians.png)
 
 > 🎓 A meridian is an imaginary straight line that goes from the North Pole to the South Pole, forming a semicircle.
 
@@ -100,7 +100,7 @@ Coordinates for a point are always given as `latitude, longitude`, so the exampl
 * A latitude of 47.6423109 (47.6423109 degrees north of the equator)
 * A longitude of -122.1390293 (122.1390293 degrees west of the Prime Meridian).
 
-![The Microsoft Campus at 47.6423109,-122.117198](../../../images/microsoft-gps-location-world.png)
+![The Microsoft Campus at 47.6423109,-122.117198](../images/microsoft-gps-location-world.png)
 
 ## Global Positioning Systems (GPS)
 
@@ -112,7 +112,7 @@ GPS systems work by having a number of satellites that send a signal with each s
 
 > 💁 GPS sensors need antennas to detect radio waves. The antennas built into trucks and cars with on-board GPS are positioned to get a good signal, usually on the windshield or roof. If you are using a separate GPS system, such as a smartphone or an IoT device, then you need to ensure that the antenna built into the GPS system or phone has a clear view of the sky, such as being mounted on your windshield.
 
-![By knowing the distance from the sensor to multiple satellites, the location be calculated](../../../images/gps-satellites.png)
+![By knowing the distance from the sensor to multiple satellites, the location be calculated](../images/gps-satellites.png)
 
 GPS satellites are circling the Earth, not at a fixed point above the sensor, so location data includes altitude above sea level as well as latitude and longitude.
 

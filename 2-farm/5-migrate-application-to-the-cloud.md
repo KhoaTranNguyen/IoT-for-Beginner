@@ -29,11 +29,11 @@ In this lesson we'll cover:
 
 Serverless, or serverless computing, involves creating small blocks of code that are run in the cloud in response to different kinds of events. When the event happens your code is run, and it is passed data about the event. These events can be from many different things, including web requests, messages put on a queue, changes to data in a database, or messages sent to an IoT service by IoT devices.
 
-![Events being sent from an IoT service to a serverless service, all being processed at the same time by multiple functions being run](../../../images/iot-messages-to-serverless.png)
+![Events being sent from an IoT service to a serverless service, all being processed at the same time by multiple functions being run](../images/iot-messages-to-serverless.png)
 
 > 💁 If you've used database triggers before, you can think of this as the same thing, code being triggered by an event such as inserting a row.
 
-![When many events are sent at the same time, the serverless service scales up to run them all at the same time](../../../images/serverless-scaling.png)
+![When many events are sent at the same time, the serverless service scales up to run them all at the same time](../images/serverless-scaling.png)
 
 Your code is only run when the event happens, there is nothing keeping your code alive at other times. The event happens, your code is loaded and run. This makes serverless very scalable - if many events happen at the same time, the cloud provider can run your function as many times as you need at the same time across whatever servers they have available. The downside to this is if you need to share information between events, you need to save it somewhere like a database rather than storing it in memory.
 
@@ -55,7 +55,7 @@ As an IoT developer, the serverless model is ideal. You can write a function tha
 
 The serverless computing service from Microsoft is called Azure Functions.
 
-![The Azure Functions logo](../../../images/azure-functions-logo.png)
+![The Azure Functions logo](../images/azure-functions-logo.png)
 
 The short video below has an overview of Azure Functions
 
@@ -238,7 +238,7 @@ The Azure Functions CLI can be used to create a new Functions app.
     VS Code. Initialize for optimal use with VS Code?
     ```
 
-    ![The notification](../../../images/vscode-azure-functions-init-notification.png)
+    ![The notification](../images/vscode-azure-functions-init-notification.png)
 
     Select **Yes** from this notification.
 

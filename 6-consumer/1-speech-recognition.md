@@ -51,19 +51,19 @@ Microphones come in a variety of types:
 
     Dynamic microphones don't need power to work, the electrical signal is created entirely from the microphone.
 
-    ![Patti Smith singing into a Shure SM58 (dynamic cardioid type) microphone](../../../images/dynamic-mic.jpg)
+    ![Patti Smith singing into a Shure SM58 (dynamic cardioid type) microphone](../images/dynamic-mic.jpg)
 
 * Ribbon - Ribbon microphones are similar to dynamic microphones, except they have a metal ribbon instead of a diaphragm. This ribbon moves in a magnetic field generating an electrical current. Like dynamic microphones, ribbon microphones don't need power to work.
 
-    ![Edmund Lowe, American actor, standing at radio microphone (labeled for (NBC) Blue Network), holding script, 1942](../../../images/ribbon-mic.jpg)
+    ![Edmund Lowe, American actor, standing at radio microphone (labeled for (NBC) Blue Network), holding script, 1942](../images/ribbon-mic.jpg)
 
 * Condenser - Condenser microphones have a thin metal diaphragm and a fixed metal backplate. Electricity is applied to both of these and as the diaphragm vibrates the static charge between the plates changes generating a signal. Condenser microphones need power to work - called *Phantom power*.
 
-    ![C451B small-diaphragm condenser microphone by AKG Acoustics](../../../images/condenser-mic.jpg)
+    ![C451B small-diaphragm condenser microphone by AKG Acoustics](../images/condenser-mic.jpg)
 
 * MEMS - Microelectromechanical systems microphones, or MEMS, are microphones on a chip. They have a pressure sensitive diaphragm etched onto a silicon chip, and work similar to a condenser microphone. These microphones can be tiny, and integrated into circuitry.
 
-    ![A MEMS microphone on a circuit board](../../../images/mems-microphone.png)
+    ![A MEMS microphone on a circuit board](../images/mems-microphone.png)
 
     In the image above, the chip labelled **LEFT** is a MEMS microphone, with a tiny diaphragm less than a millimeter wide.
 
@@ -75,7 +75,7 @@ Audio is an analog signal carrying very fine-grained information. To convert thi
 
 > 🎓 Sampling is converting the audio signal into a digital value that represents the signal at that point in time.
 
-![A line chart showing a signal, with discrete points at fixed intervals](../../../images/sampling.png)
+![A line chart showing a signal, with discrete points at fixed intervals](../images/sampling.png)
 
 Digital audio is sampled using Pulse Code Modulation, or PCM. PCM involves reading the voltage of the signal, and selecting the closest discrete value to that voltage using a defined size.
 
@@ -161,7 +161,7 @@ To avoid the complexity of training and using a wake word model, the smart timer
 
 ## Convert speech to text
 
-![Speech services logo](../../../images/azure-speech-logo.png)
+![Speech services logo](../images/azure-speech-logo.png)
 
 Just like with image classification in an earlier project, there are pre-built AI services that can take speech as an audio file and convert it to text. Once such service is the Speech Service, part of the Cognitive Services, pre-built AI services you can use in your apps.
 

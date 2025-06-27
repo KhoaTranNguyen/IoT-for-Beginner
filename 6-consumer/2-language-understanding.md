@@ -46,7 +46,7 @@ Language understanding models are AI models that are trained to extract certain 
 
 ## Create a language understanding model
 
-![The LUIS logo](../../../images/luis-logo.png)
+![The LUIS logo](../images/luis-logo.png)
 
 You can create language understanding models using LUIS, a language understanding service from Microsoft that is part of Cognitive Services.
 
@@ -117,7 +117,7 @@ Once the entities are defined, you create intents. These are learned by the mode
 
 You then tell LUIS what parts of these sentences map to the entities:
 
-![The sentence set a timer for 1 minute and 12 seconds broken into entities](../../../images/sentence-as-intent-entities.png)
+![The sentence set a timer for 1 minute and 12 seconds broken into entities](../images/sentence-as-intent-entities.png)
 
 The sentence `set a timer for 1 minute and 12 seconds` has the intent of `set timer`. It also has 2 entities with 2 values each:
 
@@ -169,7 +169,7 @@ You can find instructions for using the LUIS portal in the [Quickstart: Build yo
 
 1. As you enter each example, LUIS will start detecting entities, and will underline and label any it finds.
 
-    ![The examples with the numbers and time units underlined by LUIS](../../../images/luis-intent-examples.png)
+    ![The examples with the numbers and time units underlined by LUIS](../images/luis-intent-examples.png)
 
 ### Task - train and test the model
 

@@ -64,11 +64,11 @@ Taking a simple example - back in the farm project you captured soil moisture se
 
 As a human, understanding that data can be hard. It's a wall of numbers without any meaning. As a first step to visualizing this data, it can be plotted on a line chart:
 
-![A line chart of the above data](../../../images/chart-soil-moisture.png)
+![A line chart of the above data](../images/chart-soil-moisture.png)
 
 This can be further enhanced by adding a line to indicate when the automated watering system was turned on at a soil moisture reading of 450:
 
-![A line chart of soil moisture with a line at 450](../../../images/chart-soil-moisture-relay.png)
+![A line chart of soil moisture with a line at 450](../images/chart-soil-moisture-relay.png)
 
 This chart shows very quickly not only what the soil moisture levels were, but the points where the watering system was turned on.
 
@@ -84,7 +84,7 @@ When working with GPS data, the clearest visualization can be to plot the data o
 
 Working with maps is an interesting exercise, and there are many to choose from such as Bing Maps, Leaflet, Open Street Maps, and Google Maps. In this lesson, you will learn about [Azure Maps](https://azure.microsoft.com/services/azure-maps/?WT.mc_id=academic-17441-jabenn) and how they can display your GPS data.
 
-![The Azure Maps logo](../../../images/azure-maps-logo.png)
+![The Azure Maps logo](../images/azure-maps-logo.png)
 
 Azure Maps is "a collection of geospatial services and SDKs that use fresh mapping data to provide geographic context to web and mobile applications." Developers are provided with tools to create beautiful, interactive maps that can do things like provide recommended traffic routes, give information about traffic incidents, indoor navigation, search capabilities, elevation information, weather services and more.
 
@@ -185,7 +185,7 @@ Now you can take the next step which is to display your map on a web page. We wi
 
     If you open your `index.html` page in a web browser, you should see a map loaded, and focused on the Seattle area.
 
-    ![A map showing Seattle, a city in Washington State, USA](../../../images/map-image.png)
+    ![A map showing Seattle, a city in Washington State, USA](../images/map-image.png)
 
     ✅ Experiment with the zoom and center parameters to change your map display. You can add different coordinates corresponding to your data's latitude and longitude to re-center the map.
 
@@ -320,7 +320,7 @@ If you make a call to your storage to fetch the data you might be surprised to s
 
 1. Load the HTML page in your browser. It will load the map, then load all the GPS data from storage and plot it on the map.
 
-    ![A map of Saint Edward State Park near Seattle, with circles showing a path around the edge of the park](../../../images/map-path.png)
+    ![A map of Saint Edward State Park near Seattle, with circles showing a path around the edge of the park](../images/map-path.png)
 
 > 💁 You can find this code in the [code](./code) folder.
 

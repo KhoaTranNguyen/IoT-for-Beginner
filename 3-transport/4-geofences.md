@@ -35,7 +35,7 @@ In this lesson we'll cover:
 
 A geofence is a virtual perimeter for a real-world geographic region. Geofences can be circles defined as a point and a radius (for example a circle 100m wide around a building), or a polygon covering an area such as a school zone, city limits, or university or office campus.
 
-![Some geofence examples showing a circular geofence around the Microsoft company store, and a polygon geofence around the Microsoft west campus](../../../images/geofence-examples.png)
+![Some geofence examples showing a circular geofence around the Microsoft company store, and a polygon geofence around the Microsoft west campus](../images/geofence-examples.png)
 
 > 💁 You may have already used geofences without knowing. If you've set a reminder using the iOS reminders app or Google Keep based off a location, you have used a geofence. These apps will set up a geofence based off the location given and alert you when your phone enters the geofence.
 
@@ -101,7 +101,7 @@ Each point on the polygon is defined as a longitude, latitude pair in an array, 
 
 The polygon coordinates array always has 1 more entry than the number of points on the polygon, with the last entry being the same as the first, closing the polygon. For example, for a rectangle there would be 5 points.
 
-![A rectangle with coordinates](../../../images/polygon-points.png)
+![A rectangle with coordinates](../images/polygon-points.png)
 
 In the image above, there is a rectangle. The polygon coordinates starts at the top-left at 47,-122, then moves right to 47,-121, then down to 46,-121, then right to 46, -122, then back up to the start point at 47, -122. This gives the polygon 5 points - top-left, top-right, bottom-right, bottom-left, then top-left to close it out.
 
@@ -199,7 +199,7 @@ When you make this request, you can also pass a value called the `searchBuffer`.
 
 When results are returned from the API call, one of the parts of the result is a `distance` measured to the closest point on the edge of the geofence, with a positive value if the point is outside the geofence, negative if it is inside the geofence. If this distance is less than the search buffer, the actual distance is returned in meters, otherwise the value is 999 or -999. 999 means that the point is outside the geofence by more than the search buffer, -999 means it is inside the geofence by more than the search buffer.
 
-![A geofence with a 50m search buffer around in](../../../images/search-buffer-and-distance.png)
+![A geofence with a 50m search buffer around in](../images/search-buffer-and-distance.png)
 
 In the image above, the geofence has a 50m search buffer.
 
@@ -212,7 +212,7 @@ It is important to know the distance to the edge of the geofence, and combine th
 
 For example, imagine GPS readings showing a vehicle was driving along a road that ends up running next to a geofence. If a single GPS value is inaccurate and places the vehicle inside the geofence, despite there being no vehicular access, then it can be ignored.
 
-![A GPS trail showing a vehicle passing the Microsoft campus on the 520, with GPS readings along the road except for one on the campus, inside a geofence](../../../images/geofence-crossing-inaccurate-gps.png)
+![A GPS trail showing a vehicle passing the Microsoft campus on the 520, with GPS readings along the road except for one on the campus, inside a geofence](../images/geofence-crossing-inaccurate-gps.png)
 
 In the above image, there is a geofence over part of the Microsoft campus. The red line shows a truck driving along the 520, with circles to show the GPS readings. Most of these are accurate and along the 520, with one inaccurate reading inside the geofence. There is no way that reading can be correct - there are no roads for the truck to suddenly divert from the 520 onto campus, then back onto the 520. The code that checks this geofence will need to take the previous readings into consideration before acting on the results of the geofence test.
 
@@ -285,7 +285,7 @@ As you will remember from previous lessons, the IoT Hub will allow you to replay
 
 The answer is it can't! Instead you can define multiple separate connections to read off events, and each one can manage the replay of unread messages. These are called *consumer groups*. When you connect to the endpoint, you can specify which consumer group you want to connect to. Each component of your application will connect to a different consumer group
 
-![One IoT Hub with 3 consumer groups distributing the same messages to 3 different functions apps](../../../images/consumer-groups.png)
+![One IoT Hub with 3 consumer groups distributing the same messages to 3 different functions apps](../images/consumer-groups.png)
 
 In theory up to 5 applications can connect to each consumer group, and they will all receive messages when they arrive. It's best practice to have only one application access each consumer group to avoid duplicate message processing, and ensure when restarting all queued messages are processed correctly. For example, if you launched your Functions app locally as well as running it in the cloud, they would both process messages, leading to duplicate blobs stored in the storage account.
 

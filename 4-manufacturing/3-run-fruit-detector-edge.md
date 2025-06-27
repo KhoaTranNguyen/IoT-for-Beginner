@@ -33,11 +33,11 @@ In this lesson we'll cover:
 
 Edge computing involves having computers that process IoT data as close as possible to where the data is generated. Instead of having this processing in the cloud, it is moved to the edge of the cloud - your internal network.
 
-![An architecture diagram showing internet services in the cloud and IoT devices on a local network](../../../images/cloud-without-edge.png)
+![An architecture diagram showing internet services in the cloud and IoT devices on a local network](../images/cloud-without-edge.png)
 
 In the lessons so far, you have had devices gathering data and sending data to the cloud to be analyzed, running serverless functions or AI models in the cloud.
 
-![An architecture diagram showing IoT devices on a local network connecting to edge devices, and those edge devices connect to the cloud](../../../images/cloud-with-edge.png)
+![An architecture diagram showing IoT devices on a local network connecting to edge devices, and those edge devices connect to the cloud](../images/cloud-with-edge.png)
 
 Edge computing involves moving some of the cloud services off the cloud and onto computers running on the same network as the IoT devices, only communicating with the cloud if needed. For example, you can run AI models on edge devices to analyse fruit for ripeness, and only send analytics back to the cloud, such as the number of ripe pieces of fruit vs unripe.
 
@@ -85,7 +85,7 @@ For IoT systems, you'll often want a blend of cloud and edge computing, leveragi
 
 ## Azure IoT Edge
 
-![The Azure IoT Edge logo](../../../images/azure-iot-edge-logo.png)
+![The Azure IoT Edge logo](../images/azure-iot-edge-logo.png)
 
 Azure IoT Edge is a service that can help you to move workloads out of the cloud and to the edge. You set up a device as an edge device, and from the cloud you can deploy code to that edge device. This allows you to mix the capabilities of the cloud and the edge.
 
@@ -99,7 +99,7 @@ IoT Edge is built into IoT Hub, so you can manage edge devices using the same se
 
 IoT Edge runs code from *containers* - self contained applications that are run in isolation from the rest of the applications on your computer. When you run a container it act's like a separate computer running inside your computer, with it's own software, services and applications running. Most of the time containers cannot access anything on your computer unless you choose to share things like a folder with the container. The container then exposes services via an open port that you can connect to or expose to your network.
 
-![A web request redirected to a container](../../../images/container-web-browser.png)
+![A web request redirected to a container](../images/container-web-browser.png)
 
 For example, you can have a container with a web site running on port 80, the default HTTP port, and you can then expose it from your computer also on port 80.
 
@@ -196,11 +196,11 @@ Once the model has been trained, it needs to be exported as a container.
 
 ## Prepare your container for deployment
 
-![Containers are built then pushed to a container registry, then deployed from the container registry to an edge device using IoT Edge](../../../images/container-edge-flow.png)
+![Containers are built then pushed to a container registry, then deployed from the container registry to an edge device using IoT Edge](../images/container-edge-flow.png)
 
 Once you have downloaded your model, it needs to be built into a container, then pushed to a container registry - an online location where you can store containers. IoT Edge can then download the container from the registry and push it to your device.
 
-![THe Azure Container Registry logo](../../../images/azure-container-registry-logo.png)
+![THe Azure Container Registry logo](../images/azure-container-registry-logo.png)
 
 The container registry you will use for this lesson is Azure Container Registry. This is not a free service, so to save money make sure you [clean up your project](../../../clean-up.md) once you are finished.
 

@@ -74,7 +74,7 @@ There are a number of AI services that can be used from your applications to tra
 
 ### Cognitive services Speech service
 
-![The speech service logo](../../../images/azure-speech-logo.png)
+![The speech service logo](../images/azure-speech-logo.png)
 
 The speech service you've been using over the past few lessons has translation capabilities for speech recognition. When you recognize speech, you can request not only the text of the speech in the same language, but also in other languages.
 
@@ -82,7 +82,7 @@ The speech service you've been using over the past few lessons has translation c
 
 ### Cognitive services Translator service
 
-![The translator service logo](../../../images/azure-translator-logo.png)
+![The translator service logo](../images/azure-translator-logo.png)
 
 The Translator service is a dedicated translation service that can translate text from one language, to one or more target languages. As well as translating, it supports a wide range of extra features including masking profanity. It also allows you to provide a specific translation for a particular word or sentence, to work with terms you don't want translated, or have a specific well-known translation.
 
@@ -121,7 +121,7 @@ For this lesson you will need a Translator resource. You will use the REST API t
 
 In an ideal world, your whole application should understand as many different languages as possible, from listening for speech, to language understanding, to responding with speech. This is a lot of work, so translation services can speed up the time to delivery of your application.
 
-![A smart timer architecture translating Japanese to English, processing in English then translating back to Japanese](../../../images/translated-smart-timer.png)
+![A smart timer architecture translating Japanese to English, processing in English then translating back to Japanese](../images/translated-smart-timer.png)
 
 Imagine you are building a smart timer that uses English end-to-end, understanding spoken English and converting that to text, running the language understanding in English, building up responses in English and replying with English speech. If you wanted to add support for Japanese, you could start with translating spoken Japanese to English text, then keep the core of the application the same, then translate the response text to Japanese before speaking the response. This would allow you to quickly add Japanese support, and you can expand to providing full end-to-end Japanese support later.
 

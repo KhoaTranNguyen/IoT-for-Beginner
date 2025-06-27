@@ -36,7 +36,7 @@ Object detection involves detecting objects in images using AI. Unlike the image
 
 Image classification is about classifying an image as a whole - what are the probabilities that the whole image matches each tag. You get back probabilities for every tag used to train the model.
 
-![Image classification of cashew nuts and tomato paste](../../../images/image-classifier-cashews-tomato.png)
+![Image classification of cashew nuts and tomato paste](../images/image-classifier-cashews-tomato.png)
 
 In the example above, two images are classified using a model trained to classify tubs of cashew nuts or cans of tomato paste. The first image is a tub of cashew nuts, and has two results from the image classifier:
 
@@ -60,7 +60,7 @@ When you then use it to predict images, instead of getting back a list of tags a
 
 > 🎓 *Bounding boxes* are the boxes around an object.
 
-![Object detection of cashew nuts and tomato paste](../../../images/object-detector-cashews-tomato.png)
+![Object detection of cashew nuts and tomato paste](../images/object-detector-cashews-tomato.png)
 
 The image above contains both a tub of cashew nuts and three cans of tomato paste. The object detector detected the cashew nuts, returning the bounding box that contains the cashew nuts with the percentage chance that the bounding box contains the object, in this case 97.6%. The object detector has also detected three cans of tomato paste, and provides three separate bounding boxes, one for each detected can, and each one has a percentage probability that the bounding box contains a can of tomato paste.
 
@@ -111,7 +111,7 @@ You can train an object detector using Custom Vision, in a similar way to how yo
 
     When you create your project, make sure to use the `stock-detector-training` resource you created earlier. Use the *Object Detection* project type, and the *Products on Shelves* domain.
 
-    ![The settings for the custom vision project with the name set to fruit-quality-detector, no description, the resource set to fruit-quality-detector-training, the project type set to classification, the classification types set to multi class and the domains set to food](../../../images/custom-vision-create-object-detector-project.png)
+    ![The settings for the custom vision project with the name set to fruit-quality-detector, no description, the resource set to fruit-quality-detector-training, the project type set to classification, the classification types set to multi class and the domains set to food](../images/custom-vision-create-object-detector-project.png)
 
     ✅ The products on shelves domain is specifically targeted for detecting stock on store shelves. Read more on the different domains in the [Select a domain documentation on Microsoft Docs](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/select-domain?WT.mc_id=academic-17441-jabenn#object-detection)
 
@@ -133,11 +133,11 @@ To train your model you will need a set of images containing the objects you wan
 
 1. Follow the [Upload and tag images section of the Build an object detector quickstart on the Microsoft docs](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/get-started-build-detector?WT.mc_id=academic-17441-jabenn#upload-and-tag-images) to upload your training images. Create relevant tags depending on the types of objects you want to detect.
 
-    ![The upload dialogs showing the upload of ripe and unripe banana pictures](../../../images/image-upload-object-detector.png)
+    ![The upload dialogs showing the upload of ripe and unripe banana pictures](../images/image-upload-object-detector.png)
 
     When you draw bounding boxes for objects, keep them nice and tight around the object. It can take a while to outline all the images, but the tool will detect what it thinks are the bounding boxes, making it faster.
 
-    ![Tagging some tomato paste](../../../images/object-detector-tag-tomato-paste.png)
+    ![Tagging some tomato paste](../images/object-detector-tag-tomato-paste.png)
 
     > 💁 If you have more than 15 images for each object, you can train after 15 then use the **Suggested tags** feature. This will use the trained model to detect the objects in the untagged image. You can then confirm the detected objects, or reject and re-draw the bounding boxes. This can save a *lot* of time.
 
@@ -155,7 +155,7 @@ Once your object detector is trained, you can test it by giving it new images to
 
 1. Use the **Quick Test** button to upload testing images and verify the objects are detected. Use the testing images you created earlier, not any of the images you used for training.
 
-    ![3 cans of tomato paste detected with probabilities of 38%, 35.5% and 34.6%](../../../images/object-detector-detected-tomato-paste.png)
+    ![3 cans of tomato paste detected with probabilities of 38%, 35.5% and 34.6%](../images/object-detector-detected-tomato-paste.png)
 
 1. Try all the testing images you have access to and observe the probabilities.
 

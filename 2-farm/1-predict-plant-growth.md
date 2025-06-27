@@ -56,7 +56,7 @@ Each species of plant has different values for their base, optimal and maximum. 
 
 ✅ Do some research. For any plants you have in your garden, school, or local park see if you can find the base temperature.
 
-![A graph showing growth rate rising as temperature rises, then dropping as the temperature goes too high](../../../images/plant-growth-temp-graph.png)
+![A graph showing growth rate rising as temperature rises, then dropping as the temperature goes too high](../images/plant-growth-temp-graph.png)
 
 The graph above shows an example growth rate to temperature graph. Up to the base temperature there is no growth. The growth rate increases up to the optimum temperature, then falls after reaching this peak. At the maximum temperature growth stops.
 
@@ -90,7 +90,7 @@ Growing degree days, or GDD are calculated per day as the average temperature in
 
 The full formula for GDD is a little complicated, but there is a simplified equation that is often used as a good approximation:
 
-![GDD = T max + T min divided by 2, all minus T base](../../../images/gdd-calculation.png)
+![GDD = T max + T min divided by 2, all minus T base](../images/gdd-calculation.png)
 
 * **GDD** - this is the number of growing degree days
 * **T<sub>max</sub>** - this is the daily maximum temperature in degrees Celsius
@@ -118,7 +118,7 @@ Plugging these numbers into our calculation:
 
 This gives a calculation of:
 
-![GDD = 16 + 12 divided by 2, all minus 10, giving an answer of 4](../../../images/gdd-calculation-corn.png)
+![GDD = 16 + 12 divided by 2, all minus 10, giving an answer of 4](../images/gdd-calculation-corn.png)
 
 The corn received 4 GDD on that day. Assuming a corn variety that needs 800 GDD days to mature, it will need another 796 GDD to reach maturity.
 
@@ -132,7 +132,7 @@ This has a huge labour impact on a large farm, and risks the farmer missing crop
 
 By gathering temperature data using an IoT device, a farmer can automatically be notified when plants are close to maturity. A typical architecture for this is to have the IoT devices measure temperature, then publish this telemetry data over the Internet using something like MQTT. Server code then listens to this data and saves it somewhere, such as to a database. This means the data can then be analyzed later, such as a nightly job to calculate the GDD for the day, total up the GDD for each crop so far and alert if a plant is close to maturity.
 
-![Telemetry data is sent to a server and then saved to a database](../../../images/save-telemetry-database.png)
+![Telemetry data is sent to a server and then saved to a database](../images/save-telemetry-database.png)
 
 The server code can also augment the data by adding extra information. For example, the IoT device can publish an identifier to indicate which device it is, and the sever code can use this to look up the location of the device, and what crops it is monitoring. It can also add basic data like the current time as some IoT devices don't have the necessary hardware to keep track of an accurate time, or require additional code to read the current time over the Internet.
 
@@ -219,7 +219,7 @@ The CSV file will have two columns - *date* and *temperature*. The *date* column
 1. Run this code for a while to capture data. Ideally you should run this for an entire day to gather enough data for GDD calculations.
 
     > 💁 If you are using Virtual IoT Device, select the random checkbox and set a range to avoid getting the same temperature everytime the temperature value is returned.
-    ![Select the random checkbox and set a range](../../../images/select-the-random-checkbox-and-set-a-range.png) 
+    ![Select the random checkbox and set a range](../images/select-the-random-checkbox-and-set-a-range.png) 
 
     > 💁 If you want to run this for an entire day, then you need to make sure the computer your server code is running on won't go to sleep, either by changing your power settings, or running something like [this keep system active Python script](https://github.com/jaqsparow/keep-system-active).
     
@@ -239,7 +239,7 @@ The steps to do this manually are:
 
 For example, if the highest temperature for the day is 25°C, and the lowest is 12°C:
 
-![GDD = 25 + 12 divided by 2, then subtract 10 from the result giving 8.5](../../../images/gdd-calculation-strawberries.png)
+![GDD = 25 + 12 divided by 2, then subtract 10 from the result giving 8.5](../images/gdd-calculation-strawberries.png)
 
 * 25 + 12 = 37
 * 37 / 2 = 18.5

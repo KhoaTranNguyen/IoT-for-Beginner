@@ -52,11 +52,11 @@ These are real world scenarios, and happen all the time. Some examples were give
 
 When a device connects to an IoT service, it uses an ID to identify itself. The problem is this ID can be cloned - a hacker could set up a malicious device that uses the same ID as a real device but sends bogus data.
 
-![Both valid and malicious devices could use the same ID to send telemetry](../../../images/iot-device-and-hacked-device-connecting.png)
+![Both valid and malicious devices could use the same ID to send telemetry](../images/iot-device-and-hacked-device-connecting.png)
 
 The way round this is to convert the data being sent into a scrambled format, using some kind of value to scramble the data known to the device and the cloud only. This process is called *encryption*, and the value used to encrypt the data is called an *encryption key*.
 
-![If encryption is used, then only encrypted messages will be accepted, others will be rejected](../../../images/iot-device-and-hacked-device-connecting-encryption.png)
+![If encryption is used, then only encrypted messages will be accepted, others will be rejected](../images/iot-device-and-hacked-device-connecting-encryption.png)
 
 The cloud service can then convert the data back to a readable format, using a process called *decryption*, using either the same encryption key, or a *decryption key*. If the encrypted message cannot be decrypted by the key, the device has been hacked and the message is rejected.
 
@@ -88,15 +88,15 @@ Encryption comes in two types - symmetric and asymmetric.
 
 **Symmetric** encryption uses the same key to encrypt and decrypt the data. Both the sender and receiver need to know the same key. This is the least secure type, as the key needs to be shared somehow. For a sender to send an encrypted message to a recipient, the sender first might have to send the recipient the key.
 
-![Symmetric key encryption uses the same key to encrypt and decrypt a message](../../../images/send-message-symmetric-key.png)
+![Symmetric key encryption uses the same key to encrypt and decrypt a message](../images/send-message-symmetric-key.png)
 
 If the key gets stolen in transit, or the sender or recipient get hacked and the key is found, the encryption can be cracked.
 
-![Symmetric key encryption is only secure if a hacker doesn't get the key - if so they can intercept and decrypt the message](../../../images/send-message-symmetric-key-hacker.png)
+![Symmetric key encryption is only secure if a hacker doesn't get the key - if so they can intercept and decrypt the message](../images/send-message-symmetric-key-hacker.png)
 
 **Asymmetric** encryption uses 2 keys - an encryption key and a decryption key, referred to as a public/private key pair. The public key is used to encrypt the message, but cannot be used to decrypt it, the private key is used to decrypt the message but cannot be used to encrypt it.
 
-![Asymmetric encryption uses a different key to encrypt and decrypt. The encryption key is sent to any message senders so they can encrypt a message before sending it to the recipient who owns the keys](../../../images/send-message-asymmetric.png)
+![Asymmetric encryption uses a different key to encrypt and decrypt. The encryption key is sent to any message senders so they can encrypt a message before sending it to the recipient who owns the keys](../images/send-message-asymmetric.png)
 
 The recipient shares their public key, and the sender uses this to encrypt the message. Once the message is sent, the recipient decrypts it with their private key. Asymmetric encryption is more secure as the private key is kept private by the recipient and never shared. Anyone can have the public key as it can only be used to encrypt messages.
 
@@ -158,7 +158,7 @@ These certificates have a number of fields in them, including who the public key
 
 When using X.509 certificates, both the sender and the recipient will have their own public and private keys, as well as both having X.509 certificates that contain the public key. They then exchange X.509 certificates somehow, using each others public keys to encrypt the data they send, and their own private key to decrypt the data they receive.
 
-![Instead of sharing a public key, you can share a certificate. The user of the certificate can verify that it comes from you by checking with the certificate authority who signed it.](../../../images/send-message-certificate.png)
+![Instead of sharing a public key, you can share a certificate. The user of the certificate can verify that it comes from you by checking with the certificate authority who signed it.](../images/send-message-certificate.png)
 
 One big advantage of using X.509 certificates is that they can be shared between devices. You can create one certificate, upload it to IoT Hub, and use this for all your devices. Each device then just needs to know the private key to decrypt the messages it receives from IoT Hub.
 

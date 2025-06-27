@@ -16,7 +16,7 @@ This lesson was taught as part of the [IoT for Beginners Project 2 - Digital Agr
 
 In the last lesson we looked at measuring an ambient property and using it to predict plant growth. Temperature can be controlled, but it is expensive to do so, requiring controlled environments. The easiest ambient property to control for plants is water - something that is controlled everyday from large-scale irrigation systems to young kids with watering cans watering their gardens.
 
-![A child watering a garden](../../../images/child-watering-garden.jpg)
+![A child watering a garden](../images/child-watering-garden.jpg)
 
 In this lesson you will learn about measuring soil moisture, and in the next lesson you will learn how to control an automated watering system. This lesson introduces a third sensor, you've already used a light sensor, a temperature sensor, so in this lesson you will also learn more about how sensors and actuators communicate with IoT devices to understand more about how a soil moisture sensor can send data to an IoT device.
 
@@ -35,7 +35,7 @@ Plants require water to grow. They absorb water throughout the entire plant, wit
 * [Transpiration](https://wikipedia.org/wiki/Transpiration) - plants use water for diffusion of carbon dioxide from the air into the plant via pores in the leaves. This process also carries nutrients around the plant, and cools the plant, similar to how humans sweat.
 * Structure - plants also need water to maintain their structure - they are 90% water (as opposed to humans at only 60%), and this water keeps the cells rigid. If a plant doesn't have enough water it will wilt and eventually die.
 
-![Water is absorbed through plant roots then carried around the plant, being used for photosynthesis and plant structure](../../../images/transpiration.png)
+![Water is absorbed through plant roots then carried around the plant, being used for photosynthesis and plant structure](../images/transpiration.png)
 
 ✅ Do some research: how much water is lost through transpiration?
 
@@ -49,13 +49,13 @@ There are a range of different types of sensor you can use to measure soil moist
 
 * Resistive - a resistive sensor has 2 probes that go into the soil. An electric current is sent to one probe, and received by the other. The sensor then measures the resistance of the soil - measuring how much the current drops at the second probe. Water is a good conductor of electricity, so the higher the water content of the soil, the lower the resistance.
 
-    ![A resistive soil moisture sensor](../../../images/resistive-soil-moisture-sensor.png)
+    ![A resistive soil moisture sensor](../images/resistive-soil-moisture-sensor.png)
 
     > 💁 You can build a resistive soil moisture sensor using two pieces of metal, such as nails, separated by a couple of centimeters, and measuring the resistance between them using a multimeter.
 
 * Capacitive - a capacitive moisture sensor measures the amount of electric charge that can be stored across a positive and a negative electrical plate, or [capacitance](https://wikipedia.org/wiki/Capacitance). The capacitance of soil changes as the moisture level changes, and this can be converted to a voltage that can be measured by an IoT device. The wetter the soil, the lower the voltage that comes out.
 
-    ![A capacitive soil moisture sensor](../../../images/grove-capacitive-soil-moisture-sensor.png)
+    ![A capacitive soil moisture sensor](../images/grove-capacitive-soil-moisture-sensor.png)
 
 These are both analog sensors, returning a voltage to indicate soil moisture. So how does this voltage get to your code? Before going any further with these sensors, let's look at how sensors and actuators communicate with IoT devices.
 
@@ -83,11 +83,11 @@ You can use GPIO pins directly with some digital sensors and actuators when you 
 
 * Button. You can connect a button between a 5V pin and a pin set to input. When you press the button it completes a circuit between the 5V pin, through the button to the input pin. From code you can read the voltage at the input pin, and if it is high (5V) then the button is pressed, if it is low (0v) then the button is not pressed. Remember the actual voltage itself is not read, instead you get a digital signal of 1 or 0 depending on if the voltage is above a threshold or not.
 
-    ![A button is sent 5 volts. When not pressed it returns 0 volts, or 0, when pressed it returns 5 volts, or 1](../../../images/button-with-digital.png)
+    ![A button is sent 5 volts. When not pressed it returns 0 volts, or 0, when pressed it returns 5 volts, or 1](../images/button-with-digital.png)
 
 * LED. You can connect an LED between an output pin and a ground pin (using a resistor otherwise you'll burn out the LED). From code you can set the output pin to high and it will send 3.3V, making a circuit from the 3.3V pin, through the LED, to the ground pin. This will light the LED.
 
-    ![An LED is sent a signal of 0 (3.3V), which lights the LED. If it is sent 0 (0v), the LED is not lit.](../../../images/led-digital-control.png)
+    ![An LED is sent a signal of 0 (3.3V), which lights the LED. If it is sent 0 (0v), the LED is not lit.](../images/led-digital-control.png)
 
 For more advanced sensors, you can use GPIO pins to send and receive digital data directly with digital sensors and actuators, or via controller boards with ADCs and DACs to talk to analog sensors and actuators.
 
@@ -101,7 +101,7 @@ Some devices, such as Arduino devices, provide analog pins. These are the same a
 
 For example, on a 3.3V board, if the sensor returns 3.3V, the value returned would be 1,023. If the voltage returned was 1.65v, the value returned will be 511.
 
-![A soil moisture sensor sent 3.3V and returning 1.65v, or a reading of 511](../../../images/analog-sensor-voltage.png)
+![A soil moisture sensor sent 3.3V and returning 1.65v, or a reading of 511](../images/analog-sensor-voltage.png)
 
 > 💁 Back in nightlight - lesson 3, the light sensor returned a value from 0-1,023. If you are using a Wio Terminal, the sensor was connected to an analog pin. If you are using a Raspberry Pi, then the sensor was connected to an analog pin on the base hat that has an integrated ADC to communicate over the GPIO pins. The virtual device was set to send a value from 0-1,023 to simulate an analog pin.
 
@@ -124,7 +124,7 @@ I<sup>2</sup>C has a bus made of 2 main wires, along with 2 power wires:
 | VCC | Voltage common collector | The power supply for the devices. This is connected to the SDA and SCL wires to provide their power via a pull-up resistor that switches the signal off when no device is the controller. |
 | GND | Ground | This provides a common ground for the electrical circuit. |
 
-![I2C bus with 3 devices connected to the SDA and SCL wires, sharing a common ground wire](../../../images/i2c.png)
+![I2C bus with 3 devices connected to the SDA and SCL wires, sharing a common ground wire](../images/i2c.png)
 
 To send data, one device will issue a start condition to show it is ready to send data. It will then become the controller. The controller then sends the address of the device that it wants to communicate with, along with if it wants to read or write data. After the data has been transmitted, the controller sends a stop condition to indicate that it has finished. After this another device can become the controller and send or receive data.
 
@@ -139,7 +139,7 @@ UART involves physical circuitry that allows two devices to communicate. Each de
 * Device 1 transmits data from its Tx pin, which is received by device 2 on it's Rx pin
 * Device 1 receives data on its Rx pin that is transmitted by device 2 from its Tx pin
 
-![UART with the Tx pin on one chip connected to the Rx pin on another, and vice versa](../../../images/uart.png)
+![UART with the Tx pin on one chip connected to the Rx pin on another, and vice versa](../images/uart.png)
 
 > 🎓 The data is sent one bit at a time, and this is known as *serial* communication. Most operating systems and microcontrollers have *serial ports*, that is connections that can send and receive serial data that are available to your code.
 
@@ -168,7 +168,7 @@ SPI controllers use 3 wires, along with 1 extra wire per peripheral. Peripherals
 | SCLK | Serial Clock | This wire sends a clock signal at a rate set by the controller. |
 | CS   | Chip Select | The controller has multiple wires, one per peripheral, and each wire connects to the CS wire on the corresponding peripheral. |
 
-![SPI with on controller and two peripherals](../../../images/spi.png)
+![SPI with on controller and two peripherals](../images/spi.png)
 
 The CS wire is used to activate one peripheral at a time, communicating over the COPI and CIPO wires. When the controller needs to change peripheral, it deactivates the CS wire connected to the currently active peripheral, then activates the wire connected to the peripheral it wants to communicate with next.
 
@@ -229,13 +229,13 @@ Soil moisture is measured using gravimetric or volumetric water content.
 
 Soil moisture sensors measure electrical resistance or capacitance - this not only varies by soil moisture, but also soil type as the components in the soil can change its electrical characteristics. Ideally sensors should be calibrated - that is taking readings from the sensor and comparing them to measurements found using a more scientific approach. For example a lab can calculate the gravimetric soil moisture using samples of a specific field taken a few times a year, and these numbers used to calibrate the sensor, matching the sensor reading to the gravimetric soil moisture.
 
-![A graph of voltage vs soil moisture content](../../../images/soil-moisture-to-voltage.png)
+![A graph of voltage vs soil moisture content](../images/soil-moisture-to-voltage.png)
 
 The graph above shows how to calibrate a sensor . The voltage is captured for a soil sample that is then measured in a lab by comparing the moist weight to the dry weight (by measuring the weight wet, then drying in an oven and measuring dry). Once a few readings have been taken, this can be plotted on a graph and a line fitted to the points. This line can then be used to convert soil moisture sensor readings taken by an IoT device into actual soil moisture measurements.
 
 💁 For resistive soil moisture sensors, the voltage increases as soil moisture increases. For capacitive soil moisture sensors, the voltage decreases as soil moisture increases, so the graphs for these would slope downwards, not upwards.
 
-![A soil moisture value interpolated from the graph](../../../images/soil-moisture-to-voltage-with-reading.png)
+![A soil moisture value interpolated from the graph](../images/soil-moisture-to-voltage-with-reading.png)
 
 The graph above shows a voltage reading from a soil moisture sensor, and by following that to the line on the graph, the actual soil moisture can be calculated.
 

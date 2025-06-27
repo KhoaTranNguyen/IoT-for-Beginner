@@ -57,7 +57,7 @@ Databases are services that allow you to store and query data. Database come in 
 
 The first databases were Relational Database Management Systems (RDBMS), or relational database. These are also known as SQL databases after the Structured Query Language (SQL) used to interact with them to add, remove, update or query data. These database consist of a schema - a well-defined set of tables of data, similar to a spreadsheet. Each table has multiple named columns. When you insert data, you add a row to the table, putting values into each of the columns. This keeps the data in a very rigid structure - although you can leave columns empty, if you want to add a new column you have to do this on the database, populating values for the existing rows. These databases are relational - in that one table can have a relationship to another.
 
-![A relational database with the ID of the User table relating to the user ID column of the purchases table, and the ID of the products table relating to the product ID of the purchases table](../../../images/sql-database.png)
+![A relational database with the ID of the User table relating to the user ID column of the purchases table, and the ID of the products table relating to the product ID of the purchases table](../images/sql-database.png)
 
 For example, if you stored a users personal details in a table, you would have some kind of internal unique ID per user that is used in a row in a table that contains the users name and address. If you then wanted to store other details about that user, such as their purchases, in another table, you would have one column in the new table for that users ID. When you look up a user, you can use their ID to get their personal details from one table, and their purchases from another.
 
@@ -75,7 +75,7 @@ NoSQL databases are called NoSQL because they don't have the same rigid structur
 
 > 💁 Despite their name, some NoSQL databases allow you to use SQL to query the data.
 
-![Documents in folders in a NoSQL database](../../../images/noqsl-database.png)
+![Documents in folders in a NoSQL database](../images/noqsl-database.png)
 
 NoSQL database do not have a pre-defined schema that limits how data is stored, instead you can insert any unstructured data, usually using JSON documents. These documents can be organized into folders, similar to files on your computer. Each document can have different fields from other documents - for example if you were storing IoT data from your farm vehicles, some may have fields for accelerometer and speed data, others may have fields for the temperature in the trailer. If you were to add a new truck type, such as one with built in scales to track the weight of produce carried, then your IoT device could add this new field and it could be stored without any changes to the database.
 
@@ -89,7 +89,7 @@ In this lesson, you will be using NoSQL storage to store IoT data.
 
 In the last lesson you captured GPS data from a GPS sensor connected to your IoT device. To store this IoT data in the cloud, you need to send it to an IoT service. Once again, you will be using Azure IoT Hub, the same IoT cloud service you used in the previous project.
 
-![Sending GPS telemetry from an IoT device to IoT Hub](../../../images/gps-telemetry-iot-hub.png)
+![Sending GPS telemetry from an IoT device to IoT Hub](../images/gps-telemetry-iot-hub.png)
 
 ### Task - send GPS data to an IoT Hub
 
@@ -171,7 +171,7 @@ Cold path data is stored in data warehouses - databases designed for storing lar
 
 Once data is flowing into your IoT Hub, you can write some serverless code to listen for events published to the Event-Hub compatible endpoint. This is the warm path - this data will be stored and used in the next lesson for reporting on the journey.
 
-![Sending GPS telemetry from an IoT device to IoT Hub, then to Azure Functions via an event hub trigger](../../../images/gps-telemetry-iot-hub-functions.png)
+![Sending GPS telemetry from an IoT device to IoT Hub, then to Azure Functions via an event hub trigger](../images/gps-telemetry-iot-hub-functions.png)
 
 ### Task - handle GPS events using serverless code
 
@@ -195,7 +195,7 @@ Once data is flowing into your IoT Hub, you can write some serverless code to li
 
 ## Azure Storage Accounts
 
-![The Azure Storage logo](../../../images/azure-storage-logo.png)
+![The Azure Storage logo](../images/azure-storage-logo.png)
 
 Azure Storage Accounts is a general purpose storage service that can store data in a variety of different ways. You can store data as blobs, in queues, in tables, or as files, and all at the same time.
 
@@ -234,7 +234,7 @@ Your function app now needs to connect to blob storage to store the messages fro
 
 In this lesson, you will use the Python SDK to see how to interact with blob storage.
 
-![Sending GPS telemetry from an IoT device to IoT Hub, then to Azure Functions via an event hub trigger, then saving it to blob storage](../../../images/save-telemetry-to-storage-from-functions.png)
+![Sending GPS telemetry from an IoT device to IoT Hub, then to Azure Functions via an event hub trigger, then saving it to blob storage](../images/save-telemetry-to-storage-from-functions.png)
 
 The data will be saved as a JSON blob with the following format:
 

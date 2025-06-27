@@ -30,7 +30,7 @@ Object detectors can be used for stock checking, either counting stock or ensuri
 
 For example, if a camera is pointing at a set of shelves that can hold 8 cans of tomato paste, and an object detector only detects 7 cans, then one is missing and needs to be restocked.
 
-![7 cans of tomato paste on a shelf, 4 on the top row, 3 on top](../../../images/stock-7-cans-tomato-paste.png)
+![7 cans of tomato paste on a shelf, 4 on the top row, 3 on top](../images/stock-7-cans-tomato-paste.png)
 
 In the above image, an object detector has detected 7 cans of tomato paste on a shelf that can hold 8 cans. Not only can the IoT device send a notification of the need to restock, but it can even give an indication of the location of the missing item, important data if you are using robots to restock shelves.
 
@@ -42,7 +42,7 @@ Sometimes the wrong stock can be on the shelves. This could be human error when 
 
 Object detection can be used to detect unexpected items, again alerting a human or robot to return the item as soon as it is detected.
 
-![A rogue can of baby corn on the tomato paste shelf](../../../images/stock-rogue-corn.png)
+![A rogue can of baby corn on the tomato paste shelf](../images/stock-rogue-corn.png)
 
 In the above image, a can of baby corn has been put on the shelf next to the tomato paste. The object detector has detected this, allowing the IoT device to notify a human or robot to return the can to it's correct location.
 
@@ -62,7 +62,7 @@ Iterations are published from the Custom Vision portal.
 
 1. Select the **Publish** button for the iteration
 
-    ![The publish button](../../../images/custom-vision-object-detector-publish-button.png)
+    ![The publish button](../images/custom-vision-object-detector-publish-button.png)
 
 1. In the *Publish Model* dialog, set the *Prediction resource* to the `stock-detector-prediction` resource you created in the last lesson. Leave the name as `Iteration2`, and select the **Publish** button.
 
@@ -76,7 +76,7 @@ Iterations are published from the Custom Vision portal.
 
     Also take a copy of the *Prediction-Key* value. This is a secure key that you have to pass when you call the model. Only applications that pass this key are allowed to use the model, any other applications are rejected.
 
-    ![The prediction API dialog showing the URL and key](../../../images/custom-vision-prediction-key-endpoint.png)
+    ![The prediction API dialog showing the URL and key](../images/custom-vision-prediction-key-endpoint.png)
 
 ✅ When a new iteration is published, it will have a different name. How do you think you would change the iteration an IoT device is using?
 
@@ -95,7 +95,7 @@ When you use the object detector, you not only get back the detected objects wit
 
 The results of a prediction in the **Predictions** tab in Custom Vision have the bounding boxes drawn on the image that was sent for prediction.
 
-![4 cans of tomato paste on a shelf with predictions for the 4 detections of 35.8%, 33.5%, 25.7% and 16.6%](../../../images/custom-vision-stock-prediction.png)
+![4 cans of tomato paste on a shelf with predictions for the 4 detections of 35.8%, 33.5%, 25.7% and 16.6%](../images/custom-vision-stock-prediction.png)
 
 In the image above, 4 cans of tomato paste were detected. In the results a red square is overlaid for each object that was detected in the image, indicating the bounding box for the image.
 
@@ -103,7 +103,7 @@ In the image above, 4 cans of tomato paste were detected. In the results a red s
 
 Bounding boxes are defined with 4 values - top, left, height and width. These values are on a scale of 0-1, representing the positions as a percentage of the size of the image. The origin (the 0,0 position) is the top left of the image, so the top value is the distance from the top, and the bottom of the bounding box is the top plus the height.
 
-![A bounding box around a can of tomato paste](../../../images/bounding-box.png)
+![A bounding box around a can of tomato paste](../images/bounding-box.png)
 
 The above image is 600 pixels wide and 800 pixels tall. The bounding box starts at 320 pixels down, giving a top coordinate of 0.4 (800 x 0.4 = 320). From the left, the bounding box starts at 240 pixels across, giving a left coordinate of 0.4 (600 x 0.4 = 240). The height of the bounding box is 240 pixels, giving a height value of 0.3 (800 x 0.3 = 240). The width of the bounding box is 120 pixels, giving a width value of 0.2 (600 x 0.2 = 120).
 
@@ -118,7 +118,7 @@ Using percentage values from 0-1 means no matter what size the image is scaled t
 
 You can use bounding boxes combined with probabilities to evaluate how accurate a detection is. For example, an object detector can detect multiple objects that overlap, for example detecting one can inside another. Your code could look at the bounding boxes, understand that this is impossible, and ignore any objects that have a significant overlap with other objects.
 
-![Two bonding boxes overlapping a can of tomato paste](../../../images/overlap-object-detection.png)
+![Two bonding boxes overlapping a can of tomato paste](../images/overlap-object-detection.png)
 
 In the example above, one bounding box indicated a predicted can of tomato paste at 78.3%. A second bounding box is slightly smaller, and is inside the first bounding box with a probability of 64.3%. Your code can check the bounding boxes, see they overlap completely, and ignore the lower probability as there is no way one can be inside another.
 

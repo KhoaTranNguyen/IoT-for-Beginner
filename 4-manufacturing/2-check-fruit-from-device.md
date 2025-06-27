@@ -26,7 +26,7 @@ In this lesson we'll cover:
 
 Camera sensors, as the name suggests, are cameras that you can connect to your IoT device. They can take still images, or capture streaming video. Some will return raw image data, others will compress the image data into an image file such as a JPEG or PNG. Usually the cameras that work with IoT devices are much smaller and lower resolution than what you might be used to, but you can get high resolution cameras that will rival top end phones. You can get all manner of interchangeable lenses, multiple camera setups, infra-red thermal cameras, or UV cameras.
 
-![The light from a scene passes through a lens and is focused on a CMOS sensor](../../../images/cmos-sensor.png)
+![The light from a scene passes through a lens and is focused on a CMOS sensor](../images/cmos-sensor.png)
 
 Most camera sensors use image sensors where each pixel is a photodiode. A lens focuses the image onto the image sensor, and thousands or millions of photodiodes detect the light falling on each one, and record that as pixel data.
 
@@ -74,7 +74,7 @@ Iterations are published from the Custom Vision portal.
 
 1. Select the **Publish** button for the iteration
 
-    ![The publish button](../../../images/custom-vision-publish-button.png)
+    ![The publish button](../images/custom-vision-publish-button.png)
 
 1. In the *Publish Model* dialog, set the *Prediction resource* to the `fruit-quality-detector-prediction` resource you created in the last lesson. Leave the name as `Iteration2`, and select the **Publish** button.
 
@@ -88,7 +88,7 @@ Iterations are published from the Custom Vision portal.
 
     Also take a copy of the *Prediction-Key* value. This is a secure key that you have to pass when you call the model. Only applications that pass this key are allowed to use the model, any other applications are rejected.
 
-    ![The prediction API dialog showing the URL and key](../../../images/custom-vision-prediction-key-endpoint.png)
+    ![The prediction API dialog showing the URL and key](../images/custom-vision-prediction-key-endpoint.png)
 
 ✅ When a new iteration is published, it will have a different name. How do you think you would change the iteration an IoT device is using?
 
@@ -109,7 +109,7 @@ You may find that the results you get when using the camera connected to your Io
 
 To get the best results for an image classifier, you want to train the model with images that are as similar to the images used for predictions as possible. If you used your phone camera to capture images for training, for example, the image quality, sharpness, and color will be different to a camera connected to an IoT device.
 
-![2 banana pictures, a low resolution one with poor lighting from an IoT device, and a high resolution one with good lighting from a phone](../../../images/banana-picture-compare.png)
+![2 banana pictures, a low resolution one with poor lighting from an IoT device, and a high resolution one with good lighting from a phone](../images/banana-picture-compare.png)
 
 In the image above, the banana picture on the left was taken using a Raspberry Pi Camera, the one on the right was taken of the same banana in the same location using an iPhone. There is a noticeable difference in quality - the iPhone picture is sharper, with brighter colors and more contrast.
 

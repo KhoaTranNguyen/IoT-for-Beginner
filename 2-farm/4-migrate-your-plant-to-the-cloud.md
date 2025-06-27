@@ -46,8 +46,8 @@ This could be very expensive, require a wide range of skilled employees, and be 
 
 The cloud is often jokingly referred to as 'someone else's computer'. The initial idea was simple - instead of buying computers, you rent someone else's computer. Someone else, a cloud computing provider, would manage huge data centers. They would be responsible for buying and installing the hardware, managing power and cooling, networking, building security, hardware and software updates, everything. As a customer, you would rent the computers you need, renting more as demand spikes, then reducing the number you rent if demand drops. These cloud data centers are all around the world.
 
-![A Microsoft cloud data center](../../../images/azure-region-existing.png)
-![A Microsoft cloud data center planned expansion](../../../images/azure-region-planned-expansion.png)
+![A Microsoft cloud data center](../images/azure-region-existing.png)
+![A Microsoft cloud data center planned expansion](../images/azure-region-planned-expansion.png)
 
 These data centers can be multiple square kilometers in size. The images above were taken a few years ago at a Microsoft cloud data center, and show the initial size, along with a planned expansion. The area cleared for the expansion is over 5 square kilometers.
 
@@ -63,7 +63,7 @@ The cloud provider can then use economies of scale to drive costs down, buying c
 
 Azure is the developer cloud from Microsoft, and this is the cloud you will be using for these lessons. The video below gives a short overview of Azure:
 
-[![Overview of Azure video](../../../images/what-is-azure-video-thumbnail.png)](https://www.microsoft.com/videoplayer/embed/RE4Ibng?WT.mc_id=academic-17441-jabenn)
+[![Overview of Azure video](../images/what-is-azure-video-thumbnail.png)](https://www.microsoft.com/videoplayer/embed/RE4Ibng?WT.mc_id=academic-17441-jabenn)
 
 ## Create a cloud subscription
 
@@ -108,11 +108,11 @@ IoT services in the cloud solve these problems. They are maintained by large clo
 
 IoT devices connect to a cloud service either using a device SDK (a library that provides code to work with the features of the service), or directly via a communication protocol such as MQTT or HTTP. The device SDK is usually the easiest route to take as it handles everything for you, such as knowing what topics to publish or subscribe to, and how to handle security.
 
-![Devices connect to a service using a device SDK. Server code also connects to the service via an SDK](../../../images/iot-service-connectivity.png)
+![Devices connect to a service using a device SDK. Server code also connects to the service via an SDK](../images/iot-service-connectivity.png)
 
 Your device then communicates with other parts of your application over this service - similar to how you sent telemetry and received commands over MQTT. This is usually using a service SDK or a similar library. Messages come from your device to the service where other components of your application can then read them, and messages can then be sent back to your device.
 
-![Devices without a valid secret key cannot connect to the IoT service](../../../images/iot-service-allowed-denied-connection.png)
+![Devices without a valid secret key cannot connect to the IoT service](../images/iot-service-allowed-denied-connection.png)
 
 These services implement security by knowing about all the devices that can connect and send data, either by having the devices pre-registered with the service, or by giving the devices secret keys or certificates they can use to register themselves with the service the first time they connect. Unknown devices are unable to connect, if they try the service rejects the connection and ignores messages sent by them.
 
@@ -126,7 +126,7 @@ Other components of your application can connect to the IoT service and learn ab
 
 Now that you have an Azure subscription, you can sign up for an IoT service. The IoT service from Microsoft is called Azure IoT Hub.
 
-![The Azure IoT Hub logo](../../../images/azure-iot-hub-logo.png)
+![The Azure IoT Hub logo](../images/azure-iot-hub-logo.png)
 
 The video below gives a short overview of Azure IoT Hub:
 
