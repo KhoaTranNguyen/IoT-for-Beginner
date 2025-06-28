@@ -130,7 +130,7 @@ GPS systems have been developed and deployed by a number of countries and politi
 
 Most GPS sensors send GPS data over UART.
 
-> ⚠️ UART was covered in [project 2, lesson 2](../../../2-farm/lessons/2-detect-soil-moisture/README.md#universal-asynchronous-receiver-transmitter-uart). Refer back to that lesson if needed.
+> ⚠️ UART was covered in [project 2, lesson 2](../2-farm/2-detect-soil-moisture.md#universal-asynchronous-receiver-transmitter-uart). Refer back to that lesson if needed.
 
 You can use a GPS sensor on your IoT device to get GPS data.
 

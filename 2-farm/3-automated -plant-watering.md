@@ -166,6 +166,18 @@ This means the best process would be a watering cycle that is something like:
 5 seconds could be too long for the pump, especially if the moisture levels are only slightly above the required level. The best way to know what timing to use is to try it, then adjust when you have sensor data, with a constant feedback loop. This can even lead to more granular timing, such as turning the pump on for 1s for every 100 above the required soil moisture, instead of a fixed 5 seconds.
 
 ✅ Do some research: Are there other timing considerations? Can the plant be watered any time that the soil moisture is too low, or are there specific times of day that are good and bad times to water plants?
+    * Best Time to Water: Early Morning
+    Why?
+    - Cooler temperatures → less evaporation
+    - Plants absorb water efficiently before the heat
+    - Leaves dry quickly → reduces fungal diseases
+
+    Time: Ideally between 5 AM and 9 AM
+
+    🌡️ Bonus Tip: Use Mulch
+    - Mulch helps soil retain moisture
+    - Reduces evaporation
+    - Keeps root temperature stable
 
 > 💁 Weather predictions can also be taken into consideration when controlling automated watering systems for outdoor growing. If rain is expected, then the watering can be put on hold till after the rain finishes. At that point the soil may be moist enough that it doesn't need watering, much more efficient that wasting water by watering just before rain.
 
