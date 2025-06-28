@@ -38,6 +38,8 @@ Plants require water to grow. They absorb water throughout the entire plant, wit
 ![Water is absorbed through plant roots then carried around the plant, being used for photosynthesis and plant structure](../images/transpiration.png)
 
 ✅ Do some research: how much water is lost through transpiration?
+    * Over 90% of the water a plant absorbs is lost through transpiration.
+    * Only 1–5% is actually used in photosynthesis and growth.
 
 The root system provides water from moisture in the soil where the plant grows. Too little water in the soil and the plant cannot absorb enough to grow, too much water and roots cannot absorb enough oxygen needed to function. This leads to roots dying and the plant unable to get enough nutrients to survive.
 
